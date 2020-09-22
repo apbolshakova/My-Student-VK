@@ -4,13 +4,22 @@
 }
 
 .dialogsItems {
-    padding: 10px;
+
 }
 
-.dialogsItems .active {
-    color: gold;
+.dialogsItem, .message {
+    margin-bottom: 10px;
+}
+
+.dialogsItem a {
+    text-decoration: none;
+}
+
+.active {
+    color: #ab47bc;
 }
 
 .messages {
-    padding: 10px;
+    padding-left: 50px;
+    border-left: solid black;
 }

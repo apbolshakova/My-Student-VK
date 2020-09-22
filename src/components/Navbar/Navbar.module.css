@@ -14,7 +14,5 @@
 }
 
 .item a.activeLink {
-    color: #f3e5f5;
-    -webkit-text-stroke: 1px #000000;
-    text-stroke: 1px #000000;
+    color: #ab47bc;
 }
