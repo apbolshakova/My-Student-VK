@@ -3,19 +3,11 @@ import s from './Profile.module.css';
 import MyPost from './MyPosts/MyPost';
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
 
-const Profile = () => {
-
-    let posts = [
-        {id: 1, message: 'Хорошо выглядишь!', likesCount: 2},
-        {id: 2, message: 'Учи реакт', likesCount: 25},
-        {id: 3, message: 'Привет', likesCount: 0},
-        {id: 4, message: 'Пока', likesCount: 24}
-    ];
-
+const Profile = (props) => {
     return (
         <div>
             <ProfileInfo/>
-            <MyPost posts={posts} />
+            <MyPost posts={props.posts} />
         </div>
     )
 }
