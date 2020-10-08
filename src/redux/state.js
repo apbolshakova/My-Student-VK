@@ -14,7 +14,8 @@ let state = {
             {id: 3, message: 'Учи реакт', likesCount: 25},
             {id: 4, message: 'Привет', likesCount: 0},
             {id: 5, message: 'Пока', likesCount: 24}
-        ]
+        ],
+        newPostText: 'Введите текст поста...'
     },
     dialogsPage: {
         messages: [
@@ -30,18 +31,42 @@ let state = {
             {id: 4, name: 'Ксения Тихомирова'},
             {id: 5, name: 'Марк Фомин'},
             {id: 6, name: 'Дмитрий Побрацкий'}
-        ]
+        ],
+        newMessageText: 'Введите сообщение...'
     }
 }
 
-export let addPost = (postMessage) => {
+window.state = state;
+
+export let addPost = () => {
     let newPost = {
         id: 5,
-        message: postMessage,
+        message: state.profilePage.newPostText,
         likesCount: 0
     };
 
     state.profilePage.posts.push(newPost);
+    state.profilePage.newPostText = '';
+    rerenderEntireTree(state);
+}
+
+export let updateNewPostText = (newText) => {
+    state.profilePage.newPostText = newText;
+    rerenderEntireTree(state);
+}
+
+export let addMessage = () => {
+    let newMessage = {
+        id: 5,
+        message: state.dialogsPage.newMessageText
+    };
+    state.dialogsPage.messages.push(newMessage);
+    state.dialogsPage.newMessageText = '';
+    rerenderEntireTree(state);
+}
+
+export let updateNewMessageText = (newText) => {
+    state.dialogsPage.newMessageText = newText;
     rerenderEntireTree(state);
 }
 
